@@ -15,6 +15,7 @@ class MenuController
         puts "4 - Import entries from a CSV"
         puts "5 - View Entry Number n"
         puts "6 - Exit"
+        puts "7 - Burn it down"
         print "Enter your selection: "
 
         selection = gets.to_i
@@ -43,6 +44,11 @@ class MenuController
             when 6
                 puts "Good-bye!"
                 exit(0)
+            when 7
+                system "clear"
+                @address_book.nuke
+                puts "All entries have been deleted"
+                main_menu
             else
                 system "clear"
                 puts "Sorry, that is not a valid input"
